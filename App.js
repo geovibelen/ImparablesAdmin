@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Preguntas } from "./Screens/Preguntas";
+import { Visitas } from "./Screens/Visitas";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -12,6 +13,7 @@ function TabHome() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="PeguntasScreen" component={Preguntas}></Tab.Screen>
+      <Tab.Screen name="VisitasScreen" component={Visitas}></Tab.Screen>
     </Tab.Navigator>
   );
 }
@@ -24,6 +26,10 @@ export default function App() {
         <Stack.Screen
           name="PreguntasScreen"
           component={Preguntas}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="VisitasScreen"
+          component={Visitas}
         ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
