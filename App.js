@@ -6,6 +6,7 @@ import { Resultados } from "./Screens/Resultados";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { cargarConfiguracion } from "./utils/conexion"
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -21,6 +22,11 @@ function TabHome() {
 }
 
 export default function App() {
+
+  if(!global.estaCargado){
+    cargarConfiguracion();
+  };
+  
   return (
     <NavigationContainer>
 
